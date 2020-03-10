@@ -11,6 +11,11 @@ body, html {
   outline: none;
 }
 
+.tip {
+color: #706565;
+font-size: 12px;
+}
+
 .container {
   width: 500px;
   height: 300px;
