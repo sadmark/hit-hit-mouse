@@ -63,13 +63,13 @@ MouseGame.prototype = {
             }            
 
             // bad 的个数
-            var badNum = that.getRandom(0, 4);
+            var badNum = that.getRandom(0, 3);
             for (var i = 0; i < badNum; i++) {
                 that.mouses[that.getRandom(0, 8)].className = 'bad active';
             }            
 
             // 要显示的个数
-            var showNum = that.getRandom(1, 4);
+            var showNum = that.getRandom(1, 3);
             for (var i = 0; i < showNum; i++) {
                 that.mouses[that.getRandom(0, 8)].style.display = 'block';
             }
