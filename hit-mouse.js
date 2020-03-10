@@ -6,6 +6,7 @@ function MouseGame() {
     this.gameScore = this.$('#game-score');
     this.goodScore = 100;
     this.badScore = 50;
+    this.isGaming = false;
 
     this.bindEvent();
 }
@@ -81,6 +82,7 @@ MouseGame.prototype = {
 
         // 监听游戏开始/重新开始
         that.gameStart[0].addEventListener('click', function() {
+            if (that.isGaming) return;
             that.startGame();
         }, false);        
 
@@ -123,7 +125,7 @@ MouseGame.prototype = {
                 for (var i = 0, j = that.mouses.length; i < j; ++i) {
                     that.mouses[i].style.display = 'none';
                 }                
-
+                that.isGaming = false;
                 alert('游戏结束，得分为：' + that.score);
             }
         }, 1000);
@@ -131,6 +133,7 @@ MouseGame.prototype = {
 
     // 开始游戏
     startGame: function() {
+        this.isGaming = true;
         this.score = 0;
         this.totalTime = 60;
         this.text(this.gameTime[0], this.totalTime);
